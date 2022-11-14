@@ -1,0 +1,93 @@
+html {
+    height: 100%;
+}
+
+body {
+    max-width: 375px;
+    max-height: 1185px;
+    height: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+h1{
+    /* position: absolute; */
+    width: 74px;
+    height: 24px;
+    /* left: 151px;
+    top: 157px; */
+    margin: 0 auto;
+    margin-top: 40%;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #000000;
+}
+
+h2{
+
+    font-weight: bold;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 168px;
+    height: 48px;
+
+    font-family: 'Inter';
+    font-size: 40px;
+    line-height: 48px;
+
+    color: #000000;
+}
+
+img{
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    display: block;
+}
+span{
+display: block;
+width: 115px;
+height: 15px;
+margin: 0 auto;
+margin-top: 10%;
+padding: 12px;
+text-align: center;
+background: #4E67C0;
+border-radius: 10px;
+color: white;
+}
+
+p{
+/* position: absolute; */
+width: 273px;
+height: 119px;
+margin: 0 auto;
+margin-top: 20%;
+/* left: 57px;
+top: 545px; */
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 25px;
+text-align: center;
+
+color: #000000;
+}
+
+#x{
+    /* position: absolute; */
+    padding-left: 80%;
+    padding-top: 10%;
+    width: 24px;
+    height: 24px; 
+    left: 321px;
+    top: 37px;
+
+}

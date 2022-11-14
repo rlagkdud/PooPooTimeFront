@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='../css/home.css' rel="stylesheet" type="text/css" />
+    <title>푸푸타임</title>
+</head>
+
+<body>
+    <div style="text-align: center">
+    <section>
+        <h1 class="title"> POOPOO TIME </h1>
+        <div class="balloon">
+        <p>쾌변하러 가보자고~!</p>
+    </div>
+    <div>
+        <img class="main_pic" src='../img/main2.png' />
+    </div>
+    </section>
+    <h1>
+        <span id="hour">00</span>:<span id="min">00</span>:<span id="sec">00</span>
+    </h1>
+    <button onclick="testClick()" class="w-btn w-btn-green" id="start">푸푸타임시작</button>
+    <button class="w-btn w-btn-indigo" id="stop">스탑하기</button>
+    <button class="w-btn w-btn-indigo" id="record">기록하기</button>
+    <button class="w-btn w-btn-indigo" id="clear">초기화하기</button>
+    </div>
+
+    <!-- 기록하는 부분 캐시로 할 수 있도록 연구해보자--완료! -->
+    <div id='recordBlock'>💩나의 푸푸 기록💩</div>
+    <div>
+        <ul class="js-recordList"></ul>
+    </div>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src= '../js/timer2.js'></script>
+</body>
+<script>
+        
+    const testClick = () => {
+        //document.getElementById("start").innerHTML = "푸푸타임종료"
+        document.getElementById("start").innerHTML="기분좋은 푸푸타임"
+    }
+
+</script>
+</html>
+
