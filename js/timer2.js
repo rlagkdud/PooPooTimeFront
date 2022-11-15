@@ -3,6 +3,7 @@ var getHour = document.querySelector("#hour"),
   getSecond = document.querySelector("#sec");
 const recordBtn = document.querySelector("#record");
 const ul = document.querySelector(".js-recordList");
+
 let timer_sec;
 let timer_min;
 let timer_hour;
@@ -12,10 +13,12 @@ let timer = 0;
 const RECORDS_LS = "records";
 let records = [];
 
+//기록을 local storage에 저장하는 함수
 function saveRecords() {
   localStorage.setItem(RECORDS_LS, JSON.stringify(records));
 }
 
+// 기록하기 버튼을 누르면 기록을 생성하고 보여주는 함수
 function paintRecord(hour, min, sec) {
   const a = document.createElement("a");
   const li = document.createElement("li");
@@ -39,6 +42,7 @@ function paintRecord(hour, min, sec) {
   saveRecords();
 }
 
+// 현재 기록을 가져오는 함수
 function handleRecord(event) {
   event.preventDefault();
   const currentHour = hour.innerText;
@@ -135,6 +139,7 @@ function loadRecords() {
   }
 }
 
+//처음 창이 띄워졌을때 실행되는 함수
 function init() {
   loadRecords();
   recordBtn.addEventListener("click", handleRecord);
