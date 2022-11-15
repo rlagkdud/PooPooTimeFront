@@ -18,6 +18,8 @@ function saveRecords() {
   localStorage.setItem(RECORDS_LS, JSON.stringify(records));
 }
 
+function showDetail(event) {}
+
 // 기록하기 버튼을 누르면 기록을 생성하고 보여주는 함수
 function paintRecord(hour, min, sec) {
   const a = document.createElement("a");
@@ -27,6 +29,7 @@ function paintRecord(hour, min, sec) {
   const href = "./detail.html";
   span.innerText = `${hour}:${min}:${sec}`;
   li.appendChild(span);
+  li.value = 1; // li의 value 값으로 시간을 넘겨주자. 그리고 시간 변수를 글로벌 변수로 해서 showDetail에서 가져다 조건으로 사용하자.
   a.appendChild(li);
   a.id = newId;
   a.href = href;
@@ -39,6 +42,7 @@ function paintRecord(hour, min, sec) {
     href: "./detail.html",
   };
   records.push(recordObj);
+  a.addEventListener("click", showDetail);
   saveRecords();
 }
 
