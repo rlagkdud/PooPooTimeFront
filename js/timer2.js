@@ -11,9 +11,6 @@ let timer_hour;
 
 let timer = 0;
 
-let targetTime = "";
-console.log("targetTime: ", targetTime);
-
 const RECORDS_LS = "records";
 let records = [];
 
@@ -33,15 +30,15 @@ function paintRecord(hour, min, sec) {
   li.appendChild(span);
   li.value = parseInt(hour * 60 * 60) + parseInt(min * 60) + parseInt(sec); //1분 25초가 125로 나옴 // li의 value 값으로 시간을 넘겨주자. 그리고 시간 변수를 글로벌 변수로 해서 showDetail에서 가져다 조건으로 사용하자.
   if (li.value > 8) {
-    newHref = "./detail5.html";
+    newHref = `./detail5.html?hour=${hour}&min=${min}&sec=${sec}`;
   } else if (li.value > 6) {
-    newHref = "./detail4.html";
+    newHref = `./detail4.html?hour=${hour}&min=${min}&sec=${sec}`;
   } else if (li.value > 4) {
-    newHref = "./detail3.html";
+    newHref = `./detail3.html?hour=${hour}&min=${min}&sec=${sec}`;
   } else if (li.value > 2) {
-    newHref = "./detail2.html";
+    newHref = `./detail2.html?hour=${hour}&min=${min}&sec=${sec}`;
   } else {
-    newHref = "./detail1.html";
+    newHref = `./detail1.html?hour=${hour}&min=${min}&sec=${sec}`;
   }
   a.appendChild(li);
   a.id = newId;
