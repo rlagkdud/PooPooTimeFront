@@ -10,6 +10,6 @@ let params = new URLSearchParams(query);
 let hour = params.get("hour");
 let min = params.get("min");
 let sec = params.get("sec");
-console.log(hour, min, sec);
+//console.log(hour, min, sec);
 
 h2.innerText = `${hour}:${min}:${sec}`;
