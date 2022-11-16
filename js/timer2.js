@@ -3,12 +3,16 @@ var getHour = document.querySelector("#hour"),
   getSecond = document.querySelector("#sec");
 const recordBtn = document.querySelector("#record");
 const ul = document.querySelector(".js-recordList");
+const showTimeH2 = document.querySelector("#showTime");
 
 let timer_sec;
 let timer_min;
 let timer_hour;
 
 let timer = 0;
+
+let targetTime = "";
+console.log("targetTime: ", targetTime);
 
 const RECORDS_LS = "records";
 let records = [];
@@ -18,31 +22,39 @@ function saveRecords() {
   localStorage.setItem(RECORDS_LS, JSON.stringify(records));
 }
 
-function showDetail(event) {}
-
 // 기록하기 버튼을 누르면 기록을 생성하고 보여주는 함수
 function paintRecord(hour, min, sec) {
   const a = document.createElement("a");
   const li = document.createElement("li");
   const span = document.createElement("span");
   const newId = records.length + 1;
-  const href = "./detail.html";
+  var newHref = "";
   span.innerText = `${hour}:${min}:${sec}`;
   li.appendChild(span);
   li.value = parseInt(hour * 60 * 60) + parseInt(min * 60) + parseInt(sec); //1분 25초가 125로 나옴 // li의 value 값으로 시간을 넘겨주자. 그리고 시간 변수를 글로벌 변수로 해서 showDetail에서 가져다 조건으로 사용하자.
+  if (li.value > 8) {
+    newHref = "./detail5.html";
+  } else if (li.value > 6) {
+    newHref = "./detail4.html";
+  } else if (li.value > 4) {
+    newHref = "./detail3.html";
+  } else if (li.value > 2) {
+    newHref = "./detail2.html";
+  } else {
+    newHref = "./detail1.html";
+  }
   a.appendChild(li);
   a.id = newId;
-  a.href = href;
+  a.href = newHref;
   ul.appendChild(a);
   const recordObj = {
     hour: hour,
     min: min,
     sec: sec,
     id: newId,
-    href: "./detail.html",
+    href: newHref,
   };
   records.push(recordObj);
-  a.addEventListener("click", showDetail);
   saveRecords();
 }
 

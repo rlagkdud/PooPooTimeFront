@@ -14,7 +14,6 @@
 //}
 //
 //strtBtn.addEventListener("click", startBtn);
-
 window.onload = function () {
   let timer_sec;
   let timer_min;
