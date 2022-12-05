@@ -160,12 +160,10 @@ li #showResult {
   margin-bottom: 8%;
   color: #84b9ea;
 }
-/* li #subImg {
-  width: 60px;
-  border: solid;
-  margin-left: 30%;
-  margin-top: 10%;
-} */
+#recordBlock {
+  margin: 5% auto;
+  padding-top: 10%;
+}
 a {
   text-decoration: none;
   color: black;
