@@ -158,6 +158,7 @@ li #showResult {
   flex-direction: column;
   padding-top: 5%;
   margin-bottom: 8%;
+  color: #a7a7a7;
 }
 /* li #subImg {
   width: 60px;
