@@ -24,10 +24,21 @@ function paintRecord(hour, min, sec) {
   const a = document.createElement("a");
   const li = document.createElement("li");
   const span = document.createElement("span");
+  const span2 = document.createElement("span");
+  const img = document.createElement("img");
+  const div = document.createElement("div");
+  div.id = "rightbox";
+  span.id = "showTime";
+  span2.id = "showResult";
+  img.src = "../img/sp1.png";
   const newId = records.length + 1;
   var newHref = "";
   span.innerText = `${hour}:${min}:${sec}`;
+  span2.innerText = "결과확인하기 → ";
   li.appendChild(span);
+  div.appendChild(img);
+  div.appendChild(span2);
+  li.appendChild(div);
   li.value = parseInt(hour * 60 * 60) + parseInt(min * 60) + parseInt(sec); //1분 25초가 125로 나옴 // li의 value 값으로 시간을 넘겨주자. 그리고 시간 변수를 글로벌 변수로 해서 showDetail에서 가져다 조건으로 사용하자.
   if (li.value > 8) {
     newHref = `./detail5.html?hour=${hour}&min=${min}&sec=${sec}`;
