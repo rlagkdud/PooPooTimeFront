@@ -40,15 +40,19 @@ function paintRecord(hour, min, sec) {
   div.appendChild(span2);
   li.appendChild(div);
   li.value = parseInt(hour * 60 * 60) + parseInt(min * 60) + parseInt(sec); //1분 25초가 125로 나옴 // li의 value 값으로 시간을 넘겨주자. 그리고 시간 변수를 글로벌 변수로 해서 showDetail에서 가져다 조건으로 사용하자.
-  if (li.value > 8) {
+  if (li.value > 600) {
     newHref = `./detail5.html?hour=${hour}&min=${min}&sec=${sec}`;
-  } else if (li.value > 6) {
+  } else if (li.value > 300) {
+    // 300< <=600
     newHref = `./detail4.html?hour=${hour}&min=${min}&sec=${sec}`;
-  } else if (li.value > 4) {
+  } else if (li.value > 120) {
+    //120< <=300
     newHref = `./detail3.html?hour=${hour}&min=${min}&sec=${sec}`;
-  } else if (li.value > 2) {
+  } else if (li.value > 60) {
+    //60< <=120
     newHref = `./detail2.html?hour=${hour}&min=${min}&sec=${sec}`;
   } else {
+    // <60
     newHref = `./detail1.html?hour=${hour}&min=${min}&sec=${sec}`;
   }
   a.appendChild(li);
